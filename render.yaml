@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: medical # Nommez-le comme votre projet
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn medical.wsgi:application"  # ⚠️ Adaptez "medical" à votre projet
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: db.sqlite3  # Nom de la BDD
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"  # Désactivez en production !
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+    plan: free

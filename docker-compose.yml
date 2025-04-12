@@ -1,0 +1,28 @@
+version: '3'
+services:
+  backend:
+    build: ./medical
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - DJANGO_DB_HOST=db
+      - DJANGO_DB_PORT=5432
+      - DJANGO_DB_NAME=mydb
+      - DJANGO_DB_USER=user
+      - DJANGO_DB_PASSWORD=password
+
+  frontend:
+    build: ./medical_manegement1
+    ports:
+      - "5000:5000"
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydb
+    volumes:
+      - ./db-data:/var/lib/postgresql/data
