@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os  # Ajoutez cette ligne !
 from pathlib import Path  # Si vous utilisez Path
 from pathlib import Path
-import dj_database_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-5zqth0^t-_%2yg6173j0o=g*r4sk6e^41)@!5a3u4m(nla*pgv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "10.0.2.2",'*']
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "10.0.2.2"]
 
 
 
@@ -138,4 +138,4 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-   CORS_ALLOW_CREDENTIALS = True
+
