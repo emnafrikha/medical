@@ -6,6 +6,7 @@ import 'DoctorAvailabilityPage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'mesRendezVous.dart';
 import 'notificationClient.dart';
+const String baseUrl = String.fromEnvironment('API_BASE_URL', defaultValue: 'http://10.0.2.2:8000');
 
 class AcceuilClient extends StatefulWidget {
   @override
